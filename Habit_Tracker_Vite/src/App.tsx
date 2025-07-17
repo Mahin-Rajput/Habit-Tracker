@@ -1,19 +1,32 @@
 
 import './App.css'
-import Navbar from './Components/Navbar'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import Navbar from './Components/Navbar'
+import HabitHome from './Components/HabitHome';
 import Login from './Components/Login'
+
 
 function App() {
 
   return (
-    <>
-     
-     <Navbar/>
-     <main className="pt-20">
-        <Login />
-      </main>
-    </>
+    
+    <Router>
+      <Navbar/>
+        <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/habithome" element={<HabitHome />} />
+        </Routes>
+      
+    </Router>
+    
+    // <> 
+    //  <Navbar/>
+    //  <main className="pt-20">
+    //     <Login />
+    //   </main>
+    //   <HabitHome/>
+    // </>
   )
 }
 
